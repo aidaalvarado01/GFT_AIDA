@@ -1,0 +1,94 @@
+SignatureOperation: |
+  {
+   "type": "object",
+   "schema": "http://json-schema.org/draft-04/schema",
+   "id": "SignatureOperation",
+   "description": "",
+  
+    "properties": {
+            "sequenceNumber":{
+            "type": "string",
+            "description": "Número de secuencia"
+        },
+        "function":{
+            "$ref":"SignatureOperationFunction",
+            "description": "Código y descripción de la función"
+        },
+        "status":{
+            "$ref":"SignatureOperationStatus",
+            "description": "Estatus. enum: CN = "PENDING_AUTHORIZE", AU = "AUTHORIZED", PF = "PENDING_SIGNATURE""
+        },
+        "accountNumber":{
+            "type": "string",
+            "description": "Número de la cuenta"
+        },
+        "description":{
+            "type": "string",
+            "description": "Descripción"
+        },
+        "totalImport":{
+            "$ref":"Money",
+            "description": "Total de importe"
+        },
+        "pendingImport":{
+            "$ref":"Money",
+            "description": "Importe pendiente"
+        },
+        "flexinominaIndicator":{
+            "type": "string",
+            "description": "Flexi Nomina"
+        },
+        "authorizationNumber":{
+            "type": "integer",
+            "description": "Numero de autorización"
+        },
+        "hierarchyLevel":{
+            "type": "string",
+            "description": "Nivel de jerarquía"
+        },
+        "operationType":{
+            "$ref":"SignatureOperationType",
+            "description": "Tipo de operación"
+        },
+        "aplicationDate":{
+            "type": "string",
+            "description": "Fecha de aplicación"
+        },
+        "operationUser":{
+            "type": "string",
+            "description": "Usuario operante"
+        },
+        "cancelationUser":{
+            "type": "string",
+            "description": "Usuario cancelado"
+        },
+        "numberRecords":{
+            "type": "integer",
+            "description": "Número de registros"
+        },
+        "entryDate":{
+            "type": "string",
+            "description": "Fecha alta"
+        },
+        "applicationType":{
+            "type": "string",
+            "description": "Tipo de aplicación. enum: M = "SAME_DAY", D = "NEXT_DAY""
+        },
+        "flexinominaVolume":{
+            "type": "string",
+            "description": "Volumen de flexinomina"
+        },
+        "id":{
+            "type": "string",
+            "description": "Identificador de la operación"
+        },
+        "cardNumber":{
+            "type": "string",
+            "description": "Número de tarjeta"
+        },
+        "signatureOperationDetail":{
+            "$ref":"SignatureOperationDetail",
+            "description": "Detalle de la firma de la operación"
+        }
+    }
+  }

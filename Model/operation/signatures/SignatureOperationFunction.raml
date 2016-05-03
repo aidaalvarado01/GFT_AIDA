@@ -1,0 +1,18 @@
+SignatureOperationFunction: |
+  {
+   "type": "object",
+   "schema": "http://json-schema.org/draft-04/schema",
+   "id": "SignatureOperationFunction",
+   "description": "",
+  
+    "properties": {
+            "code":{
+            "type": "string",
+            "description": "Código de la función"
+        },
+        "desc":{
+            "$ref":"SignatureOperationFunctionType",
+            "description": "Descripción del código. enum: 'SALARY_PAYMENT', 'GROUPS', 'INTERBANK_GROUPS', 'INTERBANK_TRANSFER'"
+        }
+    }
+  }

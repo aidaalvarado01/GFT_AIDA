@@ -1,0 +1,22 @@
+SignatureOperationDetail: |
+  {
+   "type": "object",
+   "schema": "http://json-schema.org/draft-04/schema",
+   "id": "SignatureOperationDetail",
+   "description": "",
+  
+    "properties": {
+            "id":{
+            "type": "string",
+            "description": "Identificador del detalle de la firma de la operación"
+        },
+        "type":{
+            "$ref":"SignatureOperationDetailType",
+            "description": "Tipo de operación. enum: 'WIRE_TRANSFER'"
+        },
+        "isignatureOperationDetail":{
+            "$ref":"ISignatureOperationDetail",
+            "description": "Interfaz del detalle de la firma de operación"
+        }
+    }
+  }
