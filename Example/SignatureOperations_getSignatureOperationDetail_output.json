@@ -1,0 +1,16 @@
+{
+  "id": "468",
+  "type": {
+    "type": "WIRE_TRANSFER"
+  },
+  "iSignatureOperationDetail": {
+    "wireOperationDetail": {
+      "receiverBank": "SANTANDER",
+      "receiverAccount": "4568-RT96",
+      "receiverName": "Octavio",
+      "paymentReason": "Deuda",
+      "referenceNumber": 4259631,
+      "nextBusinessDay": "15/05/2016"
+    }
+  }
+}

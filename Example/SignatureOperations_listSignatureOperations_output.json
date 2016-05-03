@@ -1,0 +1,35 @@
+{
+  "signatureOperation":{
+    "function":{
+      "code": "I9H2",
+      "description": "SALARY_PAYMENT"
+    },
+    "cardNumber": "4569-78",
+    "id": "56",
+    "sequenceNumber": 23,
+    "accountNumber": "",
+    "description": "",
+    "totalImport":{
+      "amount": "4500"
+    },
+    "pendingImport":{
+      "amount": "9500"
+    },
+    "flexinominaIndicator": "A",
+    "authorizationNumber": 500,
+    "hierarchyLevel": "2",
+    "status":{
+      "status": "AUTHORIZED"
+    },
+    "operationType": "1",
+    "aplicationDate": "14/04/2016",
+    "operationUser": "ADMINF",
+    "cancelationUser": "CLAVE2",
+    "numberRecords": 25,
+    "entryDate": "01/01/2016",
+    "applicationType":{
+      "type": "M"
+    },
+    "flexinominaVolume": "56"
+  }
+}
