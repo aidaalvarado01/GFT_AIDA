@@ -1,0 +1,78 @@
+#%RAML 0.8
+title: "SignatureOperations"
+version: "1.0.0"
+baseUri: "https://api.bbva.mx:443/api/v01"
+schemas: 
+  - !include ../../model/operations/signatures/SignatureOperationDetail.raml
+  - !include ../../model/operations/signatures/SignatureOperation.raml
+"/signatureOperations/V01/":
+    displayName: "/signatureOperations/V01/"
+    description: ""
+    GET:
+        description: "<b>listSignatureOperations</b> - Obtener operaciones que son pendientes de firma (operaciones históricas, operaciones por autorizar ó operaciones por cancelar) <br><br>"
+        queryParameters:
+            "previousPaginationkey":
+                displayName: "previousPaginationkey" 
+                description: "Siguiente llave de paginación"
+                type: string
+                required: true
+            "queryType":
+                displayName: "queryType" 
+                description: "Tipo de consulta"
+                type: string
+                required: true
+            "$filter":
+                displayName: "$filter" 
+                description: "(signatureOperation.function.code={code},userId={userId},userName={userName},signatureOperation.cardNumber={cardNumber}),<br>Descripción: Parámetros opcionales de entrada.<br>"
+                type: string
+                required: true
+            "nextpaginationkey":
+                displayName: "nextpaginationkey" 
+                description: "Siguiente llave de paginación"
+                type: string
+                required: true
+        responses:
+            "200": 
+                description: "Consulta exitosa"
+                body:
+                    "application/json":
+                        schema: |
+                          {
+                            "$schema": "http://json-schema.org/draft-03/schema",
+                            "type": "object",
+                            "description": "Coleccion de retorno",
+                            "properties": {
+                              "dashboard":  {"$ref": "SignatureOperation" }
+                            }
+                          }
+                        example: !include "../../examples/SignatureOperations_listSignatureOperations_output.json"
+            "400": 
+                description: "Cuando el mensaje de entrada está mal formado."
+            "409":
+                description: "Cuando se trata de un error funcional (error de negocio)."
+            "500":
+                description: "Cuando se trata de un error interno."
+"/signatureOperations/V01/{signatureOperationId}/signatureOperationDetails/":
+    displayName: "/signatureOperations/V01/{signatureOperationId}/signatureOperationDetails/"
+    description: ""
+    GET:
+        description: "<b>getSignatureOperationDetail</b> - Obtener el detalle de una operación pendiente de firma <br><br>"
+        queryParameters:
+            "$filter":
+                displayName: "$filter" 
+                description: "(userId={userId},personId={personId}),<br>Descripción: Parámetros opcionales de entrada.<br>"
+                type: string
+                required: true
+        responses:
+            "200": 
+                description: "Consulta exitosa"
+                body:
+                    "application/json":
+                        schema: "SignatureOperationDetail"
+                        example: !include "../../examples/SignatureOperations_getSignatureOperationDetail_output.json"
+            "400": 
+                description: "Cuando el mensaje de entrada está mal formado."
+            "409":
+                description: "Cuando se trata de un error funcional (error de negocio)."
+            "500":
+                description: "Cuando se trata de un error interno."
